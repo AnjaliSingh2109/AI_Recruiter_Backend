@@ -101,8 +101,8 @@ public class SecurityConfig {
 
         configuration.setAllowedOriginPatterns(Arrays.asList(origins.split(",")));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
-        configuration.setAllowedHeaders(List.of("Authorization", "Cache-Control", "Content-Type"));
-        configuration.setExposedHeaders(List.of("Authorization")); // Expose token if needed
+        configuration.setAllowedHeaders(List.of("*")); // Allow all headers for browser requests
+        configuration.setExposedHeaders(List.of("Authorization"));
         configuration.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
